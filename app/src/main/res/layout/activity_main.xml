@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingTop="20dp"
+        android:paddingBottom="50dp"
+        android:text="Cervezas y Pollos"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:layout_marginBottom="0dp"
+        android:layout_weight="0"
+        android:paddingBottom="0dp"
+        android:src="@drawable/main_image" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-30dp"
+        android:layout_weight="0"
+        android:gravity="center_vertical|center_horizontal|center">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal|center">
+
+            <Button
+                android:id="@+id/botonPedir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:onClick="executeShop"
+                android:text="@string/botonPedir" />
+
+            <Button
+                android:id="@+id/botonAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:onClick="executeAbout"
+                android:text="@string/botonAbout" />
+
+            <Button
+                android:id="@+id/botonSalir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:onClick="exitApp"
+                android:text="@string/botonSalir" />
+        </TableRow>
+
+    </TableLayout>
+    </LinearLayout>
+
+
+

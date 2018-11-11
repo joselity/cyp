@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cervezas y Pollos</string>
+    <string name="botonPedir">PEDIR</string>
+    <string name="botonAbout">ABOUT</string>
+    <string name="botonSalir">SALIR</string>
+    <string name="botonSeguir">SEGUIR</string>
+    <string name="txtName">Nombre</string>
+    <string name="txtAddress">Dirección</string>
+    <string name="txtMail">Email</string>
+    <string name="txtPhone">Teléfono</string>
+    <string name="txtCP">Código Postal</string>
+    <string name="botonAceptar">Aceptar</string>
+</resources>
