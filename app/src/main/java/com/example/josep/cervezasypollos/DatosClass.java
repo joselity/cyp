@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class DatosClass extends Activity {
 
@@ -37,9 +38,10 @@ public class DatosClass extends Activity {
     }
 
 
-    public void executeResumen(View view) {
+    public void executeControl (View view) {
 
-        Intent i = new Intent(this, ResumenClass.class);
+
+        Intent i = new Intent(this, ControlEdadClass.class);
 
         String nombre = name.getText().toString();
         String direccion = address.getText().toString();
@@ -47,15 +49,23 @@ public class DatosClass extends Activity {
         String codigoPostal = postalCode.getText().toString();
         String telefono = phoneNumber.getText().toString();
 
-        i.putExtra("nombre", nombre);
-        i.putExtra("direccion", direccion);
-        i.putExtra("email", email);
-        i.putExtra("codigoPostal", codigoPostal);
-        i.putExtra("telefono", telefono);
-        i.putExtra("pollos", pollos);
-        i.putExtra("cervezas", cervezas);
+        if (nombre.length() == 0 || direccion.length() == 0 || email.length() == 0 || codigoPostal.length() == 0 || telefono.length() == 0) {
 
-        startActivity(i);
+            Toast toast = Toast.makeText(getApplicationContext(),"Completa los datos para continuar, gracias!", Toast.LENGTH_SHORT);
+            toast.show();
+
+        } else {
+
+            i.putExtra("nombre", nombre);
+            i.putExtra("direccion", direccion);
+            i.putExtra("email", email);
+            i.putExtra("codigoPostal", codigoPostal);
+            i.putExtra("telefono", telefono);
+            i.putExtra("pollos", pollos);
+            i.putExtra("cervezas", cervezas);
+
+            startActivity(i);
+        }
     }
 }
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PedidoClass extends Activity {
 
@@ -24,13 +25,20 @@ public class PedidoClass extends Activity {
 
     public void executeOrder (View view) {
 
-        Intent i = new Intent(this, DatosClass.class);
+        if (beerCount == 0 && chickenCount == 0) {
 
+            Toast toast = Toast.makeText(getApplicationContext(),"Debes añadir productos para poder continuar", Toast.LENGTH_SHORT);
+            toast.show();
 
-        i.putExtra("cervezas", beerCount);
-        i.putExtra("pollos", chickenCount);
+        } else {
 
-        startActivity(i);
+            Intent i = new Intent(this, DatosClass.class);
+
+            i.putExtra("cervezas", beerCount);
+            i.putExtra("pollos", chickenCount);
+
+            startActivity(i);
+        }
     }
 
     // Métodos incrementadores
@@ -38,6 +46,21 @@ public class PedidoClass extends Activity {
     public void moreBeer (View view) {
 
         beerCount++;
+
+        if (beerCount == 5) {
+
+            Toast toast = Toast.makeText(getApplicationContext(),"Vaya, qué sed tienes!!!", Toast.LENGTH_SHORT);
+            toast.show();
+
+        }
+
+        if (beerCount == 10) {
+
+            Toast toast = Toast.makeText(getApplicationContext(),"Vaya fiestaaaaa!!!!", Toast.LENGTH_SHORT);
+            toast.show();
+
+        }
+
         setBeerCount();
     }
 

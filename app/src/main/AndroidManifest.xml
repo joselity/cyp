@@ -32,6 +32,10 @@
         <activity android:name=".ResumenClass">
 
         </activity>
+
+        <activity android:name=".ControlEdadClass">
+
+        </activity>
     </application>
 
 </manifest>
